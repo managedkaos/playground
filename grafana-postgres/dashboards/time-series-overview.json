@@ -10,7 +10,7 @@
       "title": "CPU Usage by Host",
       "type": "timeseries",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "fieldConfig": {
         "defaults": {
           "unit": "percent",
@@ -41,7 +41,7 @@
       "title": "Memory Usage by Host",
       "type": "timeseries",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "fieldConfig": {
         "defaults": {
           "unit": "decgbytes",
@@ -70,7 +70,7 @@
       "title": "HTTP Request Rate",
       "type": "timeseries",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "fieldConfig": {
         "defaults": {
           "unit": "reqps",
@@ -99,7 +99,7 @@
       "title": "Response Time (p50 / p95 / p99)",
       "type": "timeseries",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "fieldConfig": {
         "defaults": {
           "unit": "ms",
@@ -127,7 +127,7 @@
       "title": "Error Rate (4xx + 5xx)",
       "type": "timeseries",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "fieldConfig": {
         "defaults": {
           "unit": "percentunit",
@@ -166,7 +166,7 @@
       "title": "Request Count by Status Code",
       "type": "piechart",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
-      "datasource": { "type": "grafana-postgresql-datasource", "uid": "" },
+      "datasource": { "type": "postgres", "uid": "" },
       "targets": [
         {
           "rawSql": "SELECT\n  status_code::text AS status,\n  count(*) AS count\nFROM http_requests\nWHERE $__timeFilter(time)\nGROUP BY status_code\nORDER BY status_code",
